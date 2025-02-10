@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Declinación Astronómica</title>
+</head>
+<body>
+    <h1>Calculadora de Declinación Astronómica</h1>
+    
+    <form action="/" method="post">
+        <label>Azimuth (°): <input type="number" step="any" name="azimuth" required></label><br>
+        <label>Altura (°): <input type="number" step="any" name="altura" required></label><br>
+        <label>Latitud (°): <input type="number" step="any" name="latitud" required></label><br>
+        <button type="submit">Calcular</button>
+    </form>
+    
+    {% if resultado is not none %}
+        <h2>Resultado: {{ resultado }}°</h2>
+    {% endif %}
+    
+    <h2>Subir archivo CSV</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Subir y Procesar</button>
+    </form>
+</body>
+</html>
