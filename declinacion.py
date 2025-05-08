@@ -9,7 +9,8 @@ def calcular_declinacion(azimuth, altura, latitud):
     """Calcula la declinación astronómica a partir de azimuth, altura y latitud."""
     azimuth_rad = np.deg2rad(azimuth)
     alt_rad = np.deg2rad(altura)
-    r = 0.0167 / (np.tan((alt_rad + (7.31 / (alt_rad+4.4) ))))
+    r = 0.0167 / (np.tan(np.deg2rad(altura + (7.31 / (altura+4.4) ))))
+    
     altura2 = altura - r
     altura_rad = np.deg2rad(altura2)
     latitud_rad = np.deg2rad(latitud)
