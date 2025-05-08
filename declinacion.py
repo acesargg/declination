@@ -25,6 +25,8 @@ def index():
             resultado = calcular_declinacion(azimuth, altura, latitud)
         except ValueError:
             resultado = "Error: Ingrese valores numéricos válidos."
+        if isinstance(resultado, float):
+        resultado = f"{resultado:.2f}"        
     return render_template('index.html', resultado=resultado)
 
 @app.route('/upload', methods=['POST'])
