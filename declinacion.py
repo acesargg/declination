@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_file
+linatfrom flask import Flask, request, render_template, send_file
 import pandas as pd
 import numpy as np
 import io
@@ -27,7 +27,7 @@ def index():
             resultado = "Error: Ingrese valores numéricos válidos."
         if isinstance(resultado, float):
             resultado = f"{resultado:.2f}"        
-    return render_template('index.html', resultado=resultado)
+    return render_template('index.html', dec=resultado)
 
 @app.route('/upload', methods=['POST'])
 def upload():
