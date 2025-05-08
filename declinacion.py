@@ -30,7 +30,7 @@ def index():
             resultado = "Error: Ingrese valores numéricos válidos."
         if isinstance(resultado, float):
             resultado = f"{resultado:.2f}"        
-    return render_template('index.html', resultado=resultado, azimuth=azimuth, altura=altura, latitud=latitud)
+    return render_template('index.html', resultado=resultado, azimuth='azimuth', altura='altura', latitud='latitud')
 
 @app.route('/upload', methods=['POST'])
 def upload():
