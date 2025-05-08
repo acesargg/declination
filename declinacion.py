@@ -16,7 +16,7 @@ def calcular_declinacion(azimuth, altura, latitud):
     latitud_rad = np.deg2rad(latitud)
     
     declinacion_rad = np.arcsin(np.sin(latitud_rad) * np.sin(altura_rad) + np.cos(latitud_rad) * np.cos(altura_rad) * np.cos(azimuth_rad))
-    return r #np.degrees(declinacion_rad)
+    return np.degrees(declinacion_rad)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
