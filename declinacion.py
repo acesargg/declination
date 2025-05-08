@@ -1,4 +1,4 @@
-linatfrom flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file
 import pandas as pd
 import numpy as np
 import io
