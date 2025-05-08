@@ -8,9 +8,9 @@ app = Flask(__name__)
 def calcular_declinacion(azimuth, altura, latitud):
     """Calcula la declinación astronómica a partir de azimuth, altura y latitud."""
     azimuth_rad = np.radians(azimuth)
-    altura_rad = np.radians(altura)
-    r = 0.0167/(np.tan((altura_rad+(7.31/(altura_rad+4.4)))))
-    altura = altura- r
+    alt_rad = np.radians(altura)
+    r = 0.0167/(np.tan((alt_rad+(7.31/(alt_rad+4.4)))))
+    altura = altura - r
     altura_rad = np.radians(altura)
     latitud_rad = np.radians(latitud)
     
